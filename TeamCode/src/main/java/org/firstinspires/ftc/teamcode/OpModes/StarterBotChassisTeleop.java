@@ -42,6 +42,12 @@ import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.PIDFCoefficients;
 import com.qualcomm.robotcore.util.ElapsedTime;
+import com.qualcomm.hardware.limelightvision.LLResult;
+import com.qualcomm.hardware.limelightvision.LLResultTypes;
+import com.qualcomm.hardware.limelightvision.LLStatus;
+import com.qualcomm.hardware.limelightvision.Limelight3A;
+
+import org.firstinspires.ftc.teamcode.Hardware.Robot;
 
 /*
  * This file includes a teleop (driver-controlled) file for the goBILDA® StarterBot Chassis/Intake for the
@@ -51,11 +57,11 @@ import com.qualcomm.robotcore.util.ElapsedTime;
 @TeleOp(name = "StarterBot Chassis Teleop", group = "StarterBot")
 //@Disabled
 public class StarterBotChassisTeleop extends OpMode {
-
     // Declare OpMode members.
     private DcMotor leftDrive = null;
     private DcMotor rightDrive = null;
     private DcMotor intake = null;
+    Robot StarterBot;
 //    private CRServo leftIntakeServo = null;
 //    private CRServo rightIntakeServo = null;
 
@@ -71,6 +77,19 @@ public class StarterBotChassisTeleop extends OpMode {
      */
     @Override
     public void init() {
+//        public void init() {
+//            limelight = hardwareMap.get(Limelight3A.class, "limelight");
+//            limelight.setPollRateHz(100); // This sets how often we ask Limelight for data (100 times per second)
+//            limelight.start(); // This tells Limelight to start looking!
+//        }
+        StarterBot = new Robot();
+//        StarterBot.limelight.pipelineSwitch(1); // 0 is python, 1 is not
+
+
+        //it is done initializing ready to start!
+        telemetry.addData(">", "READY TO START!");
+        telemetry.update();
+//        phineas.limelight = hardwareMap.get(Limelight3A.class, "Limelight");
 
         /*
          * Initialize the hardware variables. Note that the strings used here as parameters
