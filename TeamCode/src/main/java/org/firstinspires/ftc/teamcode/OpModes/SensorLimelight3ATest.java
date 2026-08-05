@@ -39,7 +39,6 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import org.firstinspires.ftc.teamcode.Hardware.LimeLight.LimeLightImageTools;
 
 
-
 /*
  * This OpMode illustrates how to use the Limelight3A Vision Sensor.
  *
